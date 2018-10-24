@@ -10,9 +10,9 @@ if [ "$PKG_OS" = "" ]; then
 fi
 echo "* PKG_OS: $PKG_OS"
 
-if [ "$PKG_OS" = "macos" -o "$PKG_OS" = "ios" ]; then
+if [ "$PKG_OS" = "macos" -o "$PKG_OS" = "ios" -o "$PKG_OS" = "android" ]; then
   echo "* CPPFLAGS += -DHAVE_DECL_OPTRESET"
-  CPPFLAGS="$CPPFLAGS -DHAVE_DECL_OPTRESET"
+  CPPFLAGS+=" -DHAVE_DECL_OPTRESET"
 fi
 
 # Import build variables
@@ -73,7 +73,7 @@ dep_cppflags=(
 )
 for dep_cppflags_entry in ${dep_cppflags[*]}; do
   echo "* CPPFLAGS += $dep_cppflags_entry"
-  CPPFLAGS="$CPPFLAGS $dep_cppflags_entry"
+  CPPFLAGS+=" $dep_cppflags_entry"
 done
 
 dep_libs=(
@@ -89,18 +89,36 @@ dep_libs=(
 )
 for dep_libs_entry in ${dep_libs[*]}; do
   echo "* LIBS += $dep_libs_entry"
-  LIBS="$LIBS $dep_libs_entry"
+  LIBS+=" $dep_libs_entry"
 done
 
-echo "CPPFLAGS += -DHAVE_BUFFEREVENT_OPENSSL_SET_ALLOW_DIRTY_SHUTDOWN"
-CPPFLAGS="$CPPFLAGS -DHAVE_BUFFEREVENT_OPENSSL_SET_ALLOW_DIRTY_SHUTDOWN"
+echo "* CPPFLAGS += -DHAVE_BUFFEREVENT_OPENSSL_SET_ALLOW_DIRTY_SHUTDOWN"
+CPPFLAGS+=" -DHAVE_BUFFEREVENT_OPENSSL_SET_ALLOW_DIRTY_SHUTDOWN"
 
 # Add extra compiler flags
 # ------------------------
 
-CFLAGS="$CFLAGS -Wall -Wextra -pedantic"
-CXXFLAGS="$CXXFLAGS -Wall -Wextra -pedantic"
-CPPFLAGS="$CPPFLAGS -DMK_NETTESTS_INTERNAL"
+warning_flags=(
+  -pedantic
+  -Wall
+  -Wextra
+)
+for warning_flags_entry in ${warning_flags[*]}; do
+  echo "* CFLAGS += $warning_flags_entry"
+  CFLAGS+=" $warning_flags_entry"
+  echo "* CXXFLAGS += $warning_flags_entry"
+  CXXFLAGS+=" $warning_flags_entry"
+done
+
+echo "* CPPFLAGS += -DMK_NETTESTS_INTERNAL"
+CPPFLAGS+=" -DMK_NETTESTS_INTERNAL"
+
+if [ "$PKG_OS" = "linux" -o "$PKG_OS" = "android" ]; then
+  echo "* CPPFLAGS += -pthread"
+  CPPFLAGS+=" -pthread"
+  echo "* LDFLAGS += -pthread"
+  LDFLAGS+=" -pthread"
+fi
 
 # Finalize compiler flags
 # -----------------------
