@@ -39,6 +39,11 @@
 /GeoLite2-Country.tar.gz
 /MK_BUILD/
 /MK_DIST/
+/android-curl-*.tar.gz
+/android-geoip-api-c-*.tar.gz
+/android-libevent-*.tar.gz
+/android-libmaxminddb-*.tar.gz
+/android-libressl-*.tar.gz
 /asn.mmdb
 /build.ninja
 /build/android/jni/conf
@@ -47,8 +52,10 @@
 /cmake_install.cmake
 /country.mmdb
 /include.am
+/jni/Android.mk
 /maxmind-geoip.*.dat*
 /measurement_kit
+/obj/
 /test-driver
 /tmp
 /tor-bridges.tor-bridges-ip-port.csv
