@@ -1,0 +1,173 @@
+LOCAL_PATH := $(call my-dir)/..
+include $(CLEAR_VARS)
+
+mk_geoip_api_c := MK_DIST/android/geoip-api-c/@GEOIP_API_C_VERSION@/$(TARGET_ARCH_ABI)
+mk_curl := MK_DIST/android/curl/@CURL_VERSION@/$(TARGET_ARCH_ABI)
+mk_libmaxminddb := MK_DIST/android/libmaxminddb/@LIBMAXMINDDB_VERSION@/$(TARGET_ARCH_ABI)
+mk_libressl := MK_DIST/android/libressl/@LIBRESSL_VERSION@/$(TARGET_ARCH_ABI)
+mk_libevent := MK_DIST/android/libevent/@LIBEVENT_VERSION@/$(TARGET_ARCH_ABI)/
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libGeoIP
+LOCAL_SRC_FILES := $(mk_geoip_api_c)/lib/libGeoIP.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libmaxminddb
+LOCAL_SRC_FILES := $(mk_libmaxminddb)/lib/libmaxminddb.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libevent_openssl
+LOCAL_SRC_FILES := $(mk_libevent)/lib/libevent_openssl.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcurl
+LOCAL_SRC_FILES := $(mk_curl)/lib/libcurl.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libssl
+LOCAL_SRC_FILES := $(mk_libressl)/lib/libssl.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcrypto
+LOCAL_SRC_FILES := $(mk_libressl)/lib/libcrypto.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libevent_core
+LOCAL_SRC_FILES := $(mk_libevent)/lib/libevent_core.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libevent_extra
+LOCAL_SRC_FILES := $(mk_libevent)/lib/libevent_extra.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libevent_pthreads
+LOCAL_SRC_FILES := $(mk_libevent)/lib/libevent_pthreads.a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE = measurement_kit
+
+mk_common_flags :=                                                             \
+  -I $(mk_geoip_api_c)/include                                                 \
+  -I $(mk_curl)/include                                                        \
+  -I $(mk_libmaxminddb)/include                                                \
+  -I $(mk_libressl)/include                                                    \
+  -I $(mk_libevent)/include                                                    \
+  -I include                                                                   \
+  -DHAVE_BUFFEREVENT_OPENSSL_SET_ALLOW_DIRTY_SHUTDOWN                          \
+  -DHAVE_DECL_OPTRESET                                                         \
+  -DHTTP_PARSER_STRICT=0                                                       \
+  -DMK_NETTESTS_INTERNAL                                                       \
+  -Wall                                                                        \
+  -Wextra                                                                      \
+  -pedantic
+
+LOCAL_LDLIBS := -lz
+
+LOCAL_CPPFLAGS := $(mk_common_flags) -std=c++14
+
+LOCAL_CFLAGS := $(mk_common_flags) -std=c11
+
+LOCAL_STATIC_LIBRARIES :=                                                      \
+  libGeoIP                                                                     \
+  libmaxminddb                                                                 \
+  libevent_openssl                                                             \
+  libcurl                                                                      \
+  libssl                                                                       \
+  libcrypto                                                                    \
+  libevent_core                                                                \
+  libevent_extra                                                               \
+  libevent_pthreads
+
+LOCAL_SRC_FILES :=                                                             \
+  src/libmeasurement_kit/net/builtin_ca_bundle.c                               \
+  src/libmeasurement_kit/portable/strtonum.c                                   \
+  src/libmeasurement_kit/ext/tls_verify.c                                      \
+  src/libmeasurement_kit/ext/http_parser.c                                     \
+  src/libmeasurement_kit/common/citrus_utf8.c                                  \
+  src/libmeasurement_kit/net/utils.cpp                                         \
+  src/libmeasurement_kit/net/emitter.cpp                                       \
+  src/libmeasurement_kit/net/error.cpp                                         \
+  src/libmeasurement_kit/net/transport.cpp                                     \
+  src/libmeasurement_kit/net/buffer.cpp                                        \
+  src/libmeasurement_kit/net/connect.cpp                                       \
+  src/libmeasurement_kit/net/socks5.cpp                                        \
+  src/libmeasurement_kit/nettests/whatsapp.cpp                                 \
+  src/libmeasurement_kit/nettests/meek_fronted_requests.cpp                    \
+  src/libmeasurement_kit/nettests/runnable.cpp                                 \
+  src/libmeasurement_kit/nettests/utils.cpp                                    \
+  src/libmeasurement_kit/nettests/http_header_field_manipulation.cpp           \
+  src/libmeasurement_kit/nettests/multi_ndt.cpp                                \
+  src/libmeasurement_kit/nettests/ndt.cpp                                      \
+  src/libmeasurement_kit/nettests/tcp_connect.cpp                              \
+  src/libmeasurement_kit/nettests/web_connectivity.cpp                         \
+  src/libmeasurement_kit/nettests/facebook_messenger.cpp                       \
+  src/libmeasurement_kit/nettests/dns_injection.cpp                            \
+  src/libmeasurement_kit/nettests/captive_portal.cpp                           \
+  src/libmeasurement_kit/nettests/http_invalid_request_line.cpp                \
+  src/libmeasurement_kit/nettests/telegram.cpp                                 \
+  src/libmeasurement_kit/nettests/dash.cpp                                     \
+  src/libmeasurement_kit/ext/sole.cpp                                          \
+  src/libmeasurement_kit/ooni/whatsapp.cpp                                     \
+  src/libmeasurement_kit/ooni/meek_fronted_requests.cpp                        \
+  src/libmeasurement_kit/ooni/utils.cpp                                        \
+  src/libmeasurement_kit/ooni/http_header_field_manipulation.cpp               \
+  src/libmeasurement_kit/ooni/bouncer.cpp                                      \
+  src/libmeasurement_kit/ooni/tcp_connect.cpp                                  \
+  src/libmeasurement_kit/ooni/web_connectivity.cpp                             \
+  src/libmeasurement_kit/ooni/facebook_messenger.cpp                           \
+  src/libmeasurement_kit/ooni/dns_injection.cpp                                \
+  src/libmeasurement_kit/ooni/captive_portal.cpp                               \
+  src/libmeasurement_kit/ooni/http_invalid_request_line.cpp                    \
+  src/libmeasurement_kit/ooni/orchestrate.cpp                                  \
+  src/libmeasurement_kit/ooni/collector_client.cpp                             \
+  src/libmeasurement_kit/ooni/telegram.cpp                                     \
+  src/libmeasurement_kit/ooni/templates.cpp                                    \
+  src/libmeasurement_kit/common/utils.cpp                                      \
+  src/libmeasurement_kit/common/encoding_utf8.cpp                              \
+  src/libmeasurement_kit/common/version.cpp                                    \
+  src/libmeasurement_kit/common/worker.cpp                                     \
+  src/libmeasurement_kit/common/every.cpp                                      \
+  src/libmeasurement_kit/common/platform.cpp                                   \
+  src/libmeasurement_kit/common/encoding_base64.cpp                            \
+  src/libmeasurement_kit/common/logger.cpp                                     \
+  src/libmeasurement_kit/common/reactor.cpp                                    \
+  src/libmeasurement_kit/common/json.cpp                                       \
+  src/libmeasurement_kit/ffi.cpp                                               \
+  src/libmeasurement_kit/http/parse_url.cpp                                    \
+  src/libmeasurement_kit/http/request.cpp                                      \
+  src/libmeasurement_kit/http/response_parser.cpp                              \
+  src/libmeasurement_kit/neubot/dash.cpp                                       \
+  src/libmeasurement_kit/report/file_reporter.cpp                              \
+  src/libmeasurement_kit/report/report.cpp                                     \
+  src/libmeasurement_kit/report/entry.cpp                                      \
+  src/libmeasurement_kit/report/ooni_reporter.cpp                              \
+  src/libmeasurement_kit/report/base_reporter.cpp                              \
+  src/libmeasurement_kit/engine.cpp                                            \
+  src/libmeasurement_kit/traceroute/interface.cpp                              \
+  src/libmeasurement_kit/traceroute/android.cpp                                \
+  src/libmeasurement_kit/ndt/utils.cpp                                         \
+  src/libmeasurement_kit/ndt/messages.cpp                                      \
+  src/libmeasurement_kit/ndt/test_meta.cpp                                     \
+  src/libmeasurement_kit/ndt/run.cpp                                           \
+  src/libmeasurement_kit/ndt/test_s2c.cpp                                      \
+  src/libmeasurement_kit/ndt/protocol.cpp                                      \
+  src/libmeasurement_kit/ndt/test_c2s.cpp                                      \
+  src/libmeasurement_kit/dns/query.cpp                                         \
+  src/libmeasurement_kit/dns/query_class.cpp                                   \
+  src/libmeasurement_kit/dns/query_type.cpp                                    \
+  src/libmeasurement_kit/mlabns/mlabns.cpp                                     \
+  src/libmeasurement_kit/vendor/mkgeoip.cpp                                    \
+  src/libmeasurement_kit/vendor/mkcurl.cpp                                     \
+                                                                               \
+  jni/ffi_FFI.cpp
+
+include $(BUILD_SHARED_LIBRARY)
