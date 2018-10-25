@@ -1,19 +1,19 @@
 #!/bin/bash
 set -e
 
-dep_curl_version="7.61.1-8"
+dep_curl_version="7.61.1-9"
 echo "* curl version: $dep_curl_version"
 
-dep_geoip_api_c_version="1.6.12-8"
+dep_geoip_api_c_version="1.6.12-9"
 echo "* geoip_api_c version: $dep_geoip_api_c_version"
 
-dep_libevent_version="2.1.8-8"
+dep_libevent_version="2.1.8-9"
 echo "* libevent version: $dep_libevent_version"
 
-dep_libmaxminddb_version="1.3.2-8"
+dep_libmaxminddb_version="1.3.2-9"
 echo "* libmaxminddb version: $dep_libmaxminddb_version"
 
-dep_libressl_version="2.7.4-8"
+dep_libressl_version="2.7.4-9"
 echo "* libressl version: $dep_libressl_version"
 
 echo "* fetch prebuilt dependencies from github.com/measurement-kit/prebuilt"
