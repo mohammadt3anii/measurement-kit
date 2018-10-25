@@ -168,6 +168,7 @@ LOCAL_SRC_FILES :=                                                             \
   src/libmeasurement_kit/vendor/mkgeoip.cpp                                    \
   src/libmeasurement_kit/vendor/mkcurl.cpp                                     \
                                                                                \
+  jni/vendor_mkcurl_FFI.cpp                                                    \
   jni/ffi_FFI.cpp
 
 include $(BUILD_SHARED_LIBRARY)
