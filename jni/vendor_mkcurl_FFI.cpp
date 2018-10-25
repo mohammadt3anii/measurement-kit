@@ -1,6 +1,6 @@
 #include "jni/vendor_mkcurl_FFI.h"
 
-#include <measurement_kit/vendor/mkcurl.h>
+#include <measurement_kit/vendor/measurement-kit/mkcurl.h>
 
 JNIEXPORT jlong JNICALL
 Java_io_ooni_mk_vendor_mkcurl_FFI_RequestNew(JNIEnv *, jclass) {
@@ -60,7 +60,7 @@ Java_io_ooni_mk_vendor_mkcurl_FFI_RequestSetBody(
     JNIEnv *env, jclass, jlong handle, jbyteArray body) {
   // Note: jsize is int32_t for both Java and Android
   if (env != nullptr && handle != 0 && body != nullptr) {
-    jsize count = env->GetArrayLength(array);
+    jsize count = env->GetArrayLength(body);
     if (count < 0) return;
     jbyte *base = env->GetByteArrayElements(body, nullptr);
     if (base == nullptr) return;

@@ -17,7 +17,7 @@ class FFI {
 
   protected static native void RequestSetTimeout(long handle, long timeout);
 
-  protected static native void RequestSetProxyURL(long hande, String url);
+  protected static native void RequestSetProxyURL(long handle, String url);
 
   protected static native void RequestEnableFollowRedirect(long handle);
 
