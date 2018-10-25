@@ -1,6 +1,6 @@
 #include "jni/vendor_mkcurl_FFI.h"
 
-#include <measurement_kit/vendor/measurement-kit/mkcurl.h>
+#include <measurement_kit/vendor/mkcurl.h>
 
 JNIEXPORT jlong JNICALL
 Java_io_ooni_mk_vendor_mkcurl_FFI_RequestNew(JNIEnv *, jclass) {

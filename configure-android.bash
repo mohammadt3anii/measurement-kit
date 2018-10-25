@@ -29,6 +29,8 @@ javac -cp java java/io/ooni/mk/ffi/FFI.java
 javah -cp java -o jni/ffi_FFI.h io.ooni.mk.ffi.FFI
 javac -cp java java/io/ooni/mk/vendor/mkcurl/FFI.java
 javah -cp java -o jni/vendor_mkcurl_FFI.h io.ooni.mk.vendor.mkcurl.FFI
+javac -cp java java/io/ooni/mk/vendor/mkgeoip/FFI.java
+javah -cp java -o jni/vendor_mkgeoip_FFI.h io.ooni.mk.vendor.mkgeoip.FFI
 
 sed -e "s/@CURL_VERSION@/$dep_curl_version/g"                 \
     -e "s/@GEOIP_API_C_VERSION@/$dep_geoip_api_c_version/g"   \
