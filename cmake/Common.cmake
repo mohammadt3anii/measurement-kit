@@ -12,9 +12,6 @@ set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}" CACHE PATH
 set(MK_CA_BUNDLE "${MK_CA_BUNDLE}" CACHE PATH
     "Path where openssl CA bundle is installed")
 
-set(MK_GEOIP "${MK_GEOIP}" CACHE PATH
-    "Path where geoip is installed")
-
 set(MK_LIBEVENT "${MK_LIBEVENT}" CACHE PATH
     "Path where libevent is installed")
 
@@ -80,7 +77,7 @@ endif()
 
 include(cmake/utils/DownloadDeps.cmake)
 if(${MK_DOWNLOAD_DEPS})
-  mk_download_deps("GEOIP;LIBRESSL;LIBEVENT")
+  mk_download_deps("LIBRESSL;LIBEVENT")
 endif()
 
 # Set target include directories and link libraries:
@@ -88,10 +85,6 @@ endif()
 list(APPEND CMAKE_REQUIRED_INCLUDES "${MK_ROOT}")
 list(APPEND CMAKE_REQUIRED_INCLUDES "${MK_ROOT}/include")
 
-if(NOT ("${MK_GEOIP}" STREQUAL ""))
-  list(APPEND CMAKE_REQUIRED_INCLUDES "${MK_GEOIP}/include")
-  list(APPEND CMAKE_LIBRARY_PATH "${MK_GEOIP}/lib")
-endif()
 if(NOT ("${MK_LIBEVENT}" STREQUAL ""))
   list(APPEND CMAKE_REQUIRED_INCLUDES "${MK_LIBEVENT}/include")
   list(APPEND CMAKE_LIBRARY_PATH "${MK_LIBEVENT}/lib")
@@ -167,20 +160,6 @@ endif()
 
 message(STATUS "CMAKE_REQUIRED_INCLUDES: ${CMAKE_REQUIRED_INCLUDES}")
 message(STATUS "CMAKE_LIBRARY_PATH: ${CMAKE_LIBRARY_PATH}")
-
-## geoip
-
-CHECK_INCLUDE_FILES(GeoIP.h HAVE_GEOIP_H)
-if("${HAVE_GEOIP_H}" STREQUAL "")
-  message(FATAL_ERROR "cannot find GeoIP.h")
-endif()
-
-FIND_LIBRARY(GEOIP_LIBRARY GeoIP)
-if("${GEOIP_LIBRARY}" STREQUAL "GEOIP_LIBRARY-NOTFOUND")
-  message(FATAL_ERROR "cannot find GeoIP library")
-endif()
-message(STATUS "GEOIP_LIBRARY: ${GEOIP_LIBRARY}")
-list(APPEND MK_LIBS "${GEOIP_LIBRARY}")
 
 ## openssl
 
