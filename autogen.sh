@@ -109,7 +109,6 @@ if [ $cmake -eq 0 ]; then
     echo "The './configure' script shall also check for external dependencies. "
     echo "MeasurementKit external dependencies are:"
     echo ""
-    echo "    - GeoIP"
     echo "    - openssl / libressl"
     echo "    - libevent"
     echo "    - libcurl"
