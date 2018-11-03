@@ -1,0 +1,722 @@
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/engine.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ffi.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/citrus_utf8.c
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/encoding_base64.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/encoding_utf8.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/every.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/json.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/logger.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/platform.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/reactor.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/utils.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/version.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/common/worker.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/dns/query.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/dns/query_class.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/dns/query_type.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ext/http_parser.c
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ext/sole.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ext/tls_verify.c
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/http/parse_url.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/http/request.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/http/response_parser.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/mlabns/mlabns.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/messages.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/protocol.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/run.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/test_c2s.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/test_meta.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/test_s2c.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ndt/utils.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/buffer.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/builtin_ca_bundle.c
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/connect.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/emitter.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/error.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/socks5.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/transport.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/net/utils.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/captive_portal.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/dash.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/dns_injection.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/facebook_messenger.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/http_header_field_manipulation.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/http_invalid_request_line.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/meek_fronted_requests.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/multi_ndt.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/ndt.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/runnable.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/tcp_connect.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/telegram.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/utils.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/web_connectivity.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/nettests/whatsapp.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/neubot/dash.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/bouncer.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/captive_portal.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/collector_client.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/dns_injection.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/facebook_messenger.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/http_header_field_manipulation.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/http_invalid_request_line.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/meek_fronted_requests.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/orchestrate.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/tcp_connect.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/telegram.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/templates.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/utils.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/web_connectivity.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/ooni/whatsapp.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/portable/strtonum.c
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/report/base_reporter.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/report/entry.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/report/file_reporter.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/report/ooni_reporter.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/report/report.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/traceroute/android.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/traceroute/interface.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkcurl.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkdata.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkgeoip.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkiplookup.cpp
+libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkmmdb.cpp
+measurement_kit_SOURCES += src/measurement_kit/main.cpp
+measurement_kit_SOURCES += src/measurement_kit/utils.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/captive_portal.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/dash.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/dns_injection.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/facebook_messenger.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/http_header_field_manipulation.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/http_invalid_request_line.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/meek_fronted_requests.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/multi_ndt.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/ndt.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/tcp_connect.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/telegram.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/web_connectivity.cpp
+measurement_kit_SOURCES += src/measurement_kit/cmd/whatsapp.cpp
+measurement_kit_SOURCES += src/measurement_kit/portable/getopt_long.c
+
+mk_includedir = ${prefix}/include/measurement_kit
+mk_include_HEADERS = # Empty
+mk_include_HEADERS += include/measurement_kit/README.md
+mk_include_HEADERS += include/measurement_kit/common.hpp
+mk_include_HEADERS += include/measurement_kit/ffi.h
+mk_include_HEADERS += include/measurement_kit/ndt.hpp
+mk_include_HEADERS += include/measurement_kit/nettests.hpp
+mk_include_HEADERS += include/measurement_kit/ooni.hpp
+
+mk_common_includedir = ${prefix}/include/measurement_kit/common
+mk_common_include_HEADERS = # Empty
+mk_common_include_HEADERS += include/measurement_kit/common/aaa_base.h
+mk_common_include_HEADERS += include/measurement_kit/common/callback.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/data_usage.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/error.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/error_or.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/json.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/logger.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/platform.h
+mk_common_include_HEADERS += include/measurement_kit/common/scalar.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/settings.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/shared_ptr.hpp
+mk_common_include_HEADERS += include/measurement_kit/common/version.h
+
+mk_common_nlohmann_includedir = ${prefix}/include/measurement_kit/common/nlohmann
+mk_common_nlohmann_include_HEADERS = # Empty
+mk_common_nlohmann_include_HEADERS += include/measurement_kit/common/nlohmann/json.hpp
+
+mk_common_portable_includedir = ${prefix}/include/measurement_kit/common/portable
+mk_common_portable_include_HEADERS = # Empty
+mk_common_portable_include_HEADERS += include/measurement_kit/common/portable/netdb.h
+mk_common_portable_include_HEADERS += include/measurement_kit/common/portable/stdlib.h
+mk_common_portable_include_HEADERS += include/measurement_kit/common/portable/strings.h
+mk_common_portable_include_HEADERS += include/measurement_kit/common/portable/time.h
+
+mk_common_portable_arpa_includedir = ${prefix}/include/measurement_kit/common/portable/arpa
+mk_common_portable_arpa_include_HEADERS = # Empty
+mk_common_portable_arpa_include_HEADERS += include/measurement_kit/common/portable/arpa/inet.h
+
+mk_common_portable_netinet_includedir = ${prefix}/include/measurement_kit/common/portable/netinet
+mk_common_portable_netinet_include_HEADERS = # Empty
+mk_common_portable_netinet_include_HEADERS += include/measurement_kit/common/portable/netinet/in.h
+mk_common_portable_netinet_include_HEADERS += include/measurement_kit/common/portable/netinet/tcp.h
+
+mk_common_portable_sys_includedir = ${prefix}/include/measurement_kit/common/portable/sys
+mk_common_portable_sys_include_HEADERS = # Empty
+mk_common_portable_sys_include_HEADERS += include/measurement_kit/common/portable/sys/socket.h
+mk_common_portable_sys_include_HEADERS += include/measurement_kit/common/portable/sys/time.h
+mk_common_portable_sys_include_HEADERS += include/measurement_kit/common/portable/sys/types.h
+
+mk_experimental_includedir = ${prefix}/include/measurement_kit/experimental
+mk_experimental_include_HEADERS = # Empty
+mk_experimental_include_HEADERS += include/measurement_kit/experimental/nettest.hpp
+
+mk_ndt_includedir = ${prefix}/include/measurement_kit/ndt
+mk_ndt_include_HEADERS = # Empty
+mk_ndt_include_HEADERS += include/measurement_kit/ndt/defs.hpp
+
+mk_nettests_includedir = ${prefix}/include/measurement_kit/nettests
+mk_nettests_include_HEADERS = # Empty
+mk_nettests_include_HEADERS += include/measurement_kit/nettests/ffi.hpp
+
+mk_ooni_includedir = ${prefix}/include/measurement_kit/ooni
+mk_ooni_include_HEADERS = # Empty
+mk_ooni_include_HEADERS += include/measurement_kit/ooni/error.hpp
+mk_ooni_include_HEADERS += include/measurement_kit/ooni/orchestrate.hpp
+mk_ooni_include_HEADERS += include/measurement_kit/ooni/utils.hpp
+
+mk_vendor_includedir = ${prefix}/include/measurement_kit/vendor
+mk_vendor_include_HEADERS = # Empty
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/README.md
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/mkcurl.h
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/mkdata.h
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/mkgeoip.h
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/mkiplookup.h
+mk_vendor_include_HEADERS += include/measurement_kit/vendor/mkmmdb.h
+
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/ffi/ndt
+endif
+example_ffi_ndt_SOURCES = example/ffi/ndt.cpp
+example_ffi_ndt_LDADD = libmeasurement_kit.la
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/ffi/web_connectivity
+endif
+example_ffi_web_connectivity_SOURCES = example/ffi/web_connectivity.cpp
+example_ffi_web_connectivity_LDADD = libmeasurement_kit.la
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/nettest/ndt
+endif
+example_nettest_ndt_SOURCES = example/nettest/ndt.cpp
+example_nettest_ndt_LDADD = libmeasurement_kit.la
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/nettest/web_connectivity
+endif
+example_nettest_web_connectivity_SOURCES = example/nettest/web_connectivity.cpp
+example_nettest_web_connectivity_LDADD = libmeasurement_kit.la
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/nettests/multithread
+endif
+example_nettests_multithread_SOURCES = example/nettests/multithread.cpp
+example_nettests_multithread_LDADD = libmeasurement_kit.la
+
+if BUILD_EXAMPLES
+    noinst_PROGRAMS += example/nettests/simple
+endif
+example_nettests_simple_SOURCES = example/nettests/simple.cpp
+example_nettests_simple_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/continuation
+endif
+test_common_continuation_SOURCES = test/common/continuation.cpp
+test_common_continuation_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/delegate
+endif
+test_common_delegate_SOURCES = test/common/delegate.cpp
+test_common_delegate_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/enable_shared_from_this
+endif
+test_common_enable_shared_from_this_SOURCES = test/common/enable_shared_from_this.cpp
+test_common_enable_shared_from_this_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/encoding
+endif
+test_common_encoding_SOURCES = test/common/encoding.cpp
+test_common_encoding_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/error
+endif
+test_common_error_SOURCES = test/common/error.cpp
+test_common_error_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/error_or
+endif
+test_common_error_or_SOURCES = test/common/error_or.cpp
+test_common_error_or_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/every
+endif
+test_common_every_SOURCES = test/common/every.cpp
+test_common_every_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/fapply
+endif
+test_common_fapply_SOURCES = test/common/fapply.cpp
+test_common_fapply_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/fcar
+endif
+test_common_fcar_SOURCES = test/common/fcar.cpp
+test_common_fcar_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/fcdr
+endif
+test_common_fcdr_SOURCES = test/common/fcdr.cpp
+test_common_fcdr_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/fcompose
+endif
+test_common_fcompose_SOURCES = test/common/fcompose.cpp
+test_common_fcompose_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/fmap
+endif
+test_common_fmap_SOURCES = test/common/fmap.cpp
+test_common_fmap_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/freverse
+endif
+test_common_freverse_SOURCES = test/common/freverse.cpp
+test_common_freverse_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/json
+endif
+test_common_json_SOURCES = test/common/json.cpp
+test_common_json_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/libevent_reactor
+endif
+test_common_libevent_reactor_SOURCES = test/common/libevent_reactor.cpp
+test_common_libevent_reactor_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/locked
+endif
+test_common_locked_SOURCES = test/common/locked.cpp
+test_common_locked_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/logger
+endif
+test_common_logger_SOURCES = test/common/logger.cpp
+test_common_logger_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/maybe
+endif
+test_common_maybe_SOURCES = test/common/maybe.cpp
+test_common_maybe_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/parallel
+endif
+test_common_parallel_SOURCES = test/common/parallel.cpp
+test_common_parallel_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/range
+endif
+test_common_range_SOURCES = test/common/range.cpp
+test_common_range_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/scalar
+endif
+test_common_scalar_SOURCES = test/common/scalar.cpp
+test_common_scalar_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/settings
+endif
+test_common_settings_SOURCES = test/common/settings.cpp
+test_common_settings_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/shared_ptr
+endif
+test_common_shared_ptr_SOURCES = test/common/shared_ptr.cpp
+test_common_shared_ptr_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/unique_ptr
+endif
+test_common_unique_ptr_SOURCES = test/common/unique_ptr.cpp
+test_common_unique_ptr_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/utils
+endif
+test_common_utils_SOURCES = test/common/utils.cpp
+test_common_utils_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/version
+endif
+test_common_version_SOURCES = test/common/version.cpp
+test_common_version_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/common/worker
+endif
+test_common_worker_SOURCES = test/common/worker.cpp
+test_common_worker_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/libevent_error
+endif
+test_dns_libevent_error_SOURCES = test/dns/libevent_error.cpp
+test_dns_libevent_error_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/ping
+endif
+test_dns_ping_SOURCES = test/dns/ping.cpp
+test_dns_ping_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/query
+endif
+test_dns_query_SOURCES = test/dns/query.cpp
+test_dns_query_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/query_class
+endif
+test_dns_query_class_SOURCES = test/dns/query_class.cpp
+test_dns_query_class_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/query_type
+endif
+test_dns_query_type_SOURCES = test/dns/query_type.cpp
+test_dns_query_type_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/dns/system_resolver
+endif
+test_dns_system_resolver_SOURCES = test/dns/system_resolver.cpp
+test_dns_system_resolver_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ffi/ndt_example
+endif
+test_ffi_ndt_example_SOURCES = test/ffi/ndt_example.cpp
+test_ffi_ndt_example_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ffi/start
+endif
+test_ffi_start_SOURCES = test/ffi/start.cpp
+test_ffi_start_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ffi/web_connectivity_example
+endif
+test_ffi_web_connectivity_example_SOURCES = test/ffi/web_connectivity_example.cpp
+test_ffi_web_connectivity_example_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/http/headers
+endif
+test_http_headers_SOURCES = test/http/headers.cpp
+test_http_headers_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/http/parse_url
+endif
+test_http_parse_url_SOURCES = test/http/parse_url.cpp
+test_http_parse_url_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/http/request
+endif
+test_http_request_SOURCES = test/http/request.cpp
+test_http_request_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/http/response_parser
+endif
+test_http_response_parser_SOURCES = test/http/response_parser.cpp
+test_http_response_parser_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/mlabns/mlabns
+endif
+test_mlabns_mlabns_SOURCES = test/mlabns/mlabns.cpp
+test_mlabns_mlabns_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/measure_speed
+endif
+test_ndt_measure_speed_SOURCES = test/ndt/measure_speed.cpp
+test_ndt_measure_speed_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/messages
+endif
+test_ndt_messages_SOURCES = test/ndt/messages.cpp
+test_ndt_messages_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/protocol
+endif
+test_ndt_protocol_SOURCES = test/ndt/protocol.cpp
+test_ndt_protocol_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/run
+endif
+test_ndt_run_SOURCES = test/ndt/run.cpp
+test_ndt_run_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/test_c2s
+endif
+test_ndt_test_c2s_SOURCES = test/ndt/test_c2s.cpp
+test_ndt_test_c2s_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/test_meta
+endif
+test_ndt_test_meta_SOURCES = test/ndt/test_meta.cpp
+test_ndt_test_meta_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ndt/test_s2c
+endif
+test_ndt_test_s2c_SOURCES = test/ndt/test_s2c.cpp
+test_ndt_test_s2c_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/buffer
+endif
+test_net_buffer_SOURCES = test/net/buffer.cpp
+test_net_buffer_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/builtin_ca_bundle
+endif
+test_net_builtin_ca_bundle_SOURCES = test/net/builtin_ca_bundle.cpp
+test_net_builtin_ca_bundle_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/connect
+endif
+test_net_connect_SOURCES = test/net/connect.cpp
+test_net_connect_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/emitter
+endif
+test_net_emitter_SOURCES = test/net/emitter.cpp
+test_net_emitter_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/evbuffer
+endif
+test_net_evbuffer_SOURCES = test/net/evbuffer.cpp
+test_net_evbuffer_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/libevent_emitter
+endif
+test_net_libevent_emitter_SOURCES = test/net/libevent_emitter.cpp
+test_net_libevent_emitter_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/libssl
+endif
+test_net_libssl_SOURCES = test/net/libssl.cpp
+test_net_libssl_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/socks5
+endif
+test_net_socks5_SOURCES = test/net/socks5.cpp
+test_net_socks5_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/transport
+endif
+test_net_transport_SOURCES = test/net/transport.cpp
+test_net_transport_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/net/utils
+endif
+test_net_utils_SOURCES = test/net/utils.cpp
+test_net_utils_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettest/ndt_example
+endif
+test_nettest_ndt_example_SOURCES = test/nettest/ndt_example.cpp
+test_nettest_ndt_example_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettest/web_connectivity_example
+endif
+test_nettest_web_connectivity_example_SOURCES = test/nettest/web_connectivity_example.cpp
+test_nettest_web_connectivity_example_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/captive_portal
+endif
+test_nettests_captive_portal_SOURCES = test/nettests/captive_portal.cpp
+test_nettests_captive_portal_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/dash
+endif
+test_nettests_dash_SOURCES = test/nettests/dash.cpp
+test_nettests_dash_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/dns_injection
+endif
+test_nettests_dns_injection_SOURCES = test/nettests/dns_injection.cpp
+test_nettests_dns_injection_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/facebook_messenger
+endif
+test_nettests_facebook_messenger_SOURCES = test/nettests/facebook_messenger.cpp
+test_nettests_facebook_messenger_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/http_header_field_manipulation
+endif
+test_nettests_http_header_field_manipulation_SOURCES = test/nettests/http_header_field_manipulation.cpp
+test_nettests_http_header_field_manipulation_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/http_invalid_request_line
+endif
+test_nettests_http_invalid_request_line_SOURCES = test/nettests/http_invalid_request_line.cpp
+test_nettests_http_invalid_request_line_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/meek_fronted_requests
+endif
+test_nettests_meek_fronted_requests_SOURCES = test/nettests/meek_fronted_requests.cpp
+test_nettests_meek_fronted_requests_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/multi_ndt
+endif
+test_nettests_multi_ndt_SOURCES = test/nettests/multi_ndt.cpp
+test_nettests_multi_ndt_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/ndt
+endif
+test_nettests_ndt_SOURCES = test/nettests/ndt.cpp
+test_nettests_ndt_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/runnable
+endif
+test_nettests_runnable_SOURCES = test/nettests/runnable.cpp
+test_nettests_runnable_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/tcp_connect
+endif
+test_nettests_tcp_connect_SOURCES = test/nettests/tcp_connect.cpp
+test_nettests_tcp_connect_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/telegram
+endif
+test_nettests_telegram_SOURCES = test/nettests/telegram.cpp
+test_nettests_telegram_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/utils
+endif
+test_nettests_utils_SOURCES = test/nettests/utils.cpp
+test_nettests_utils_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/web_connectivity
+endif
+test_nettests_web_connectivity_SOURCES = test/nettests/web_connectivity.cpp
+test_nettests_web_connectivity_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/nettests/whatsapp
+endif
+test_nettests_whatsapp_SOURCES = test/nettests/whatsapp.cpp
+test_nettests_whatsapp_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/bouncer
+endif
+test_ooni_bouncer_SOURCES = test/ooni/bouncer.cpp
+test_ooni_bouncer_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/collector_client
+endif
+test_ooni_collector_client_SOURCES = test/ooni/collector_client.cpp
+test_ooni_collector_client_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/orchestrate
+endif
+test_ooni_orchestrate_SOURCES = test/ooni/orchestrate.cpp
+test_ooni_orchestrate_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/templates
+endif
+test_ooni_templates_SOURCES = test/ooni/templates.cpp
+test_ooni_templates_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/utils
+endif
+test_ooni_utils_SOURCES = test/ooni/utils.cpp
+test_ooni_utils_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/ooni/web_connectivity
+endif
+test_ooni_web_connectivity_SOURCES = test/ooni/web_connectivity.cpp
+test_ooni_web_connectivity_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/report/entry
+endif
+test_report_entry_SOURCES = test/report/entry.cpp
+test_report_entry_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/report/file_reporter
+endif
+test_report_file_reporter_SOURCES = test/report/file_reporter.cpp
+test_report_file_reporter_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/report/report
+endif
+test_report_report_SOURCES = test/report/report.cpp
+test_report_report_LDADD = libmeasurement_kit.la
+
+if BUILD_TESTS
+    ALL_TESTS += test/traceroute/android
+endif
+test_traceroute_android_SOURCES = test/traceroute/android.cpp
+test_traceroute_android_LDADD = libmeasurement_kit.la

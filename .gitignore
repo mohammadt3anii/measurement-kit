@@ -37,7 +37,6 @@ depcomp
 /GeoLite2-ASN.tar.gz
 /GeoLite2-Country.tar.gz
 .idea
-/include.am
 install-sh
 *.ko
 *.la
