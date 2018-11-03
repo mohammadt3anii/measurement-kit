@@ -293,7 +293,7 @@ if BUILD_TESTS
     ALL_TESTS += test/mlabns/mlabns
 endif
 test_mlabns_mlabns_SOURCES = test/mlabns/mlabns.cpp
-test_mlabns_mlabns_LDADD = libmeasurement_kit.la
+test_mlabns_mlabns_LDADD = libmeasurement_kit.la libtest_main.la
 
 if BUILD_TESTS
     ALL_TESTS += test/ndt/measure_speed
