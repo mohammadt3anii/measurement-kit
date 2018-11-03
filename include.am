@@ -80,6 +80,7 @@ libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkdata.cpp
 libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkgeoip.cpp
 libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkiplookup.cpp
 libmeasurement_kit_la_SOURCES += src/libmeasurement_kit/vendor/mkmmdb.cpp
+
 measurement_kit_SOURCES += src/measurement_kit/main.cpp
 measurement_kit_SOURCES += src/measurement_kit/utils.cpp
 measurement_kit_SOURCES += src/measurement_kit/cmd/captive_portal.cpp
@@ -212,166 +213,42 @@ example_nettests_simple_SOURCES = example/nettests/simple.cpp
 example_nettests_simple_LDADD = libmeasurement_kit.la
 
 if BUILD_TESTS
-    ALL_TESTS += test/common/continuation
+    ALL_TESTS += test/common/main
 endif
-test_common_continuation_SOURCES = test/common/continuation.cpp
-test_common_continuation_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/delegate
-endif
-test_common_delegate_SOURCES = test/common/delegate.cpp
-test_common_delegate_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/enable_shared_from_this
-endif
-test_common_enable_shared_from_this_SOURCES = test/common/enable_shared_from_this.cpp
-test_common_enable_shared_from_this_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/encoding
-endif
-test_common_encoding_SOURCES = test/common/encoding.cpp
-test_common_encoding_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/error
-endif
-test_common_error_SOURCES = test/common/error.cpp
-test_common_error_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/error_or
-endif
-test_common_error_or_SOURCES = test/common/error_or.cpp
-test_common_error_or_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/every
-endif
-test_common_every_SOURCES = test/common/every.cpp
-test_common_every_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/fapply
-endif
-test_common_fapply_SOURCES = test/common/fapply.cpp
-test_common_fapply_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/fcar
-endif
-test_common_fcar_SOURCES = test/common/fcar.cpp
-test_common_fcar_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/fcdr
-endif
-test_common_fcdr_SOURCES = test/common/fcdr.cpp
-test_common_fcdr_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/fcompose
-endif
-test_common_fcompose_SOURCES = test/common/fcompose.cpp
-test_common_fcompose_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/fmap
-endif
-test_common_fmap_SOURCES = test/common/fmap.cpp
-test_common_fmap_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/freverse
-endif
-test_common_freverse_SOURCES = test/common/freverse.cpp
-test_common_freverse_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/json
-endif
-test_common_json_SOURCES = test/common/json.cpp
-test_common_json_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/libevent_reactor
-endif
-test_common_libevent_reactor_SOURCES = test/common/libevent_reactor.cpp
-test_common_libevent_reactor_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/locked
-endif
-test_common_locked_SOURCES = test/common/locked.cpp
-test_common_locked_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/logger
-endif
-test_common_logger_SOURCES = test/common/logger.cpp
-test_common_logger_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/maybe
-endif
-test_common_maybe_SOURCES = test/common/maybe.cpp
-test_common_maybe_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/parallel
-endif
-test_common_parallel_SOURCES = test/common/parallel.cpp
-test_common_parallel_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/range
-endif
-test_common_range_SOURCES = test/common/range.cpp
-test_common_range_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/scalar
-endif
-test_common_scalar_SOURCES = test/common/scalar.cpp
-test_common_scalar_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/settings
-endif
-test_common_settings_SOURCES = test/common/settings.cpp
-test_common_settings_LDADD = libmeasurement_kit.la
+test_common_main_LDADD = libmeasurement_kit.la
+test_common_main_SOURCES = test/common/continuation.cpp                        \
+                           test/common/delegate.cpp                            \
+                           test/common/enable_shared_from_this.cpp             \
+                           test/common/encoding.cpp                            \
+                           test/common/error.cpp                               \
+                           test/common/error_or.cpp                            \
+                           test/common/every.cpp                               \
+                           test/common/fapply.cpp                              \
+                           test/common/fcar.cpp                                \
+                           test/common/fcdr.cpp                                \
+                           test/common/fcompose.cpp                            \
+                           test/common/fmap.cpp                                \
+                           test/common/freverse.cpp                            \
+                           test/common/json.cpp                                \
+                           test/common/libevent_reactor.cpp                    \
+                           test/common/locked.cpp                              \
+                           test/common/logger.cpp                              \
+                           test/common/main.cpp                                \
+                           test/common/maybe.cpp                               \
+                           test/common/parallel.cpp                            \
+                           test/common/range.cpp                               \
+                           test/common/scalar.cpp                              \
+                           test/common/settings.cpp                            \
+                           test/common/unique_ptr.cpp                          \
+                           test/common/utils.cpp                               \
+                           test/common/version.cpp                             \
+                           test/common/worker.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/common/shared_ptr
 endif
-test_common_shared_ptr_SOURCES = test/common/shared_ptr.cpp
 test_common_shared_ptr_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/unique_ptr
-endif
-test_common_unique_ptr_SOURCES = test/common/unique_ptr.cpp
-test_common_unique_ptr_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/utils
-endif
-test_common_utils_SOURCES = test/common/utils.cpp
-test_common_utils_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/version
-endif
-test_common_version_SOURCES = test/common/version.cpp
-test_common_version_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/common/worker
-endif
-test_common_worker_SOURCES = test/common/worker.cpp
-test_common_worker_LDADD = libmeasurement_kit.la
+test_common_shared_ptr_SOURCES = test/common/shared_ptr.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/dns/libevent_error

@@ -20,7 +20,7 @@ include include.am
 
 # We link with libresolv to have an oracle for our base64 implementation
 if HAVE_RESOLV
-    test_common_encoding_LDADD += -lresolv
+    test_common_main_LDADD += -lresolv
 endif
 
 TESTS = $(ALL_TESTS)
