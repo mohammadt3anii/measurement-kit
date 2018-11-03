@@ -212,10 +212,12 @@ endif
 example_nettests_simple_SOURCES = example/nettests/simple.cpp
 example_nettests_simple_LDADD = libmeasurement_kit.la
 
+libtest_main_la_SOURCES = test/main/main.cpp
+
 if BUILD_TESTS
     ALL_TESTS += test/common/main
 endif
-test_common_main_LDADD = libmeasurement_kit.la
+test_common_main_LDADD = libmeasurement_kit.la libtest_main.la
 test_common_main_SOURCES = test/common/continuation.cpp                        \
                            test/common/delegate.cpp                            \
                            test/common/enable_shared_from_this.cpp             \
@@ -233,7 +235,6 @@ test_common_main_SOURCES = test/common/continuation.cpp                        \
                            test/common/libevent_reactor.cpp                    \
                            test/common/locked.cpp                              \
                            test/common/logger.cpp                              \
-                           test/common/main.cpp                                \
                            test/common/maybe.cpp                               \
                            test/common/parallel.cpp                            \
                            test/common/range.cpp                               \
@@ -251,40 +252,15 @@ test_common_shared_ptr_LDADD = libmeasurement_kit.la
 test_common_shared_ptr_SOURCES = test/common/shared_ptr.cpp
 
 if BUILD_TESTS
-    ALL_TESTS += test/dns/libevent_error
+    ALL_TESTS += test/dns/main
 endif
-test_dns_libevent_error_SOURCES = test/dns/libevent_error.cpp
-test_dns_libevent_error_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/dns/ping
-endif
-test_dns_ping_SOURCES = test/dns/ping.cpp
-test_dns_ping_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/dns/query
-endif
-test_dns_query_SOURCES = test/dns/query.cpp
-test_dns_query_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/dns/query_class
-endif
-test_dns_query_class_SOURCES = test/dns/query_class.cpp
-test_dns_query_class_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/dns/query_type
-endif
-test_dns_query_type_SOURCES = test/dns/query_type.cpp
-test_dns_query_type_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/dns/system_resolver
-endif
-test_dns_system_resolver_SOURCES = test/dns/system_resolver.cpp
-test_dns_system_resolver_LDADD = libmeasurement_kit.la
+test_dns_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_dns_main_SOURCES = test/dns/libevent_error.cpp                            \
+                        test/dns/ping.cpp                                      \
+                        test/dns/query.cpp                                     \
+                        test/dns/query_class.cpp                               \
+                        test/dns/query_type.cpp                                \
+                        test/dns/system_resolver.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/ffi/ndt_example

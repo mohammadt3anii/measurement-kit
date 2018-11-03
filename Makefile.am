@@ -3,7 +3,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 VERSION_INFO = -release @VERSION@ -version-info 0
 
-lib_LTLIBRARIES               = libmeasurement_kit.la
+lib_LTLIBRARIES               = libmeasurement_kit.la libtest_main.la
 libmeasurement_kit_la_LDFLAGS = $(VERSION_INFO)
 libmeasurement_kit_la_SOURCES = # Empty
 measurement_kit_SOURCES       = # Empty
