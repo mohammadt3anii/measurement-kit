@@ -212,7 +212,7 @@ endif
 example_nettests_simple_SOURCES = example/nettests/simple.cpp
 example_nettests_simple_LDADD = libmeasurement_kit.la
 
-libtest_main_la_SOURCES = test/main/main.cpp
+libtest_main_la_SOURCES = test/main.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/common/main
