@@ -296,46 +296,16 @@ test_mlabns_mlabns_SOURCES = test/mlabns/mlabns.cpp
 test_mlabns_mlabns_LDADD = libmeasurement_kit.la libtest_main.la
 
 if BUILD_TESTS
-    ALL_TESTS += test/ndt/measure_speed
+    ALL_TESTS += test/ndt/main
 endif
-test_ndt_measure_speed_SOURCES = test/ndt/measure_speed.cpp
-test_ndt_measure_speed_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/messages
-endif
-test_ndt_messages_SOURCES = test/ndt/messages.cpp
-test_ndt_messages_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/protocol
-endif
-test_ndt_protocol_SOURCES = test/ndt/protocol.cpp
-test_ndt_protocol_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/run
-endif
-test_ndt_run_SOURCES = test/ndt/run.cpp
-test_ndt_run_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/test_c2s
-endif
-test_ndt_test_c2s_SOURCES = test/ndt/test_c2s.cpp
-test_ndt_test_c2s_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/test_meta
-endif
-test_ndt_test_meta_SOURCES = test/ndt/test_meta.cpp
-test_ndt_test_meta_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ndt/test_s2c
-endif
-test_ndt_test_s2c_SOURCES = test/ndt/test_s2c.cpp
-test_ndt_test_s2c_LDADD = libmeasurement_kit.la
+test_ndt_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_ndt_main_SOURCES = test/ndt/measure_speed.cpp                             \
+                        test/ndt/messages.cpp                                  \
+                        test/ndt/protocol.cpp                                  \
+                        test/ndt/run.cpp                                       \
+                        test/ndt/test_c2s.cpp                                  \
+                        test/ndt/test_meta.cpp                                 \
+                        test/ndt/test_s2c.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/net/buffer
