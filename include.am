@@ -335,94 +335,24 @@ test_nettest_web_connectivity_example_SOURCES = test/nettest/web_connectivity_ex
 test_nettest_web_connectivity_example_LDADD = libmeasurement_kit.la
 
 if BUILD_TESTS
-    ALL_TESTS += test/nettests/captive_portal
+    ALL_TESTS += test/nettests/main
 endif
-test_nettests_captive_portal_SOURCES = test/nettests/captive_portal.cpp
-test_nettests_captive_portal_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/dash
-endif
-test_nettests_dash_SOURCES = test/nettests/dash.cpp
-test_nettests_dash_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/dns_injection
-endif
-test_nettests_dns_injection_SOURCES = test/nettests/dns_injection.cpp
-test_nettests_dns_injection_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/facebook_messenger
-endif
-test_nettests_facebook_messenger_SOURCES = test/nettests/facebook_messenger.cpp
-test_nettests_facebook_messenger_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/http_header_field_manipulation
-endif
-test_nettests_http_header_field_manipulation_SOURCES = test/nettests/http_header_field_manipulation.cpp
-test_nettests_http_header_field_manipulation_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/http_invalid_request_line
-endif
-test_nettests_http_invalid_request_line_SOURCES = test/nettests/http_invalid_request_line.cpp
-test_nettests_http_invalid_request_line_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/meek_fronted_requests
-endif
-test_nettests_meek_fronted_requests_SOURCES = test/nettests/meek_fronted_requests.cpp
-test_nettests_meek_fronted_requests_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/multi_ndt
-endif
-test_nettests_multi_ndt_SOURCES = test/nettests/multi_ndt.cpp
-test_nettests_multi_ndt_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/ndt
-endif
-test_nettests_ndt_SOURCES = test/nettests/ndt.cpp
-test_nettests_ndt_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/runnable
-endif
-test_nettests_runnable_SOURCES = test/nettests/runnable.cpp
-test_nettests_runnable_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/tcp_connect
-endif
-test_nettests_tcp_connect_SOURCES = test/nettests/tcp_connect.cpp
-test_nettests_tcp_connect_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/telegram
-endif
-test_nettests_telegram_SOURCES = test/nettests/telegram.cpp
-test_nettests_telegram_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/utils
-endif
-test_nettests_utils_SOURCES = test/nettests/utils.cpp
-test_nettests_utils_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/web_connectivity
-endif
-test_nettests_web_connectivity_SOURCES = test/nettests/web_connectivity.cpp
-test_nettests_web_connectivity_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/nettests/whatsapp
-endif
-test_nettests_whatsapp_SOURCES = test/nettests/whatsapp.cpp
-test_nettests_whatsapp_LDADD = libmeasurement_kit.la
+test_nettests_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_nettests_main_SOURCES = test/nettests/captive_portal.cpp                  \
+                             test/nettests/dash.cpp                            \
+                             test/nettests/dns_injection.cpp                   \
+                             test/nettests/facebook_messenger.cpp              \
+                             test/nettests/http_header_field_manipulation.cpp  \
+                             test/nettests/http_invalid_request_line.cpp       \
+                             test/nettests/meek_fronted_requests.cpp           \
+                             test/nettests/multi_ndt.cpp                       \
+                             test/nettests/ndt.cpp                             \
+                             test/nettests/runnable.cpp                        \
+                             test/nettests/tcp_connect.cpp                     \
+                             test/nettests/telegram.cpp                        \
+                             test/nettests/utils.cpp                           \
+                             test/nettests/web_connectivity.cpp                \
+                             test/nettests/whatsapp.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/ooni/bouncer
