@@ -4,7 +4,6 @@
 
 #include "test/winsock.hpp"
 
-#define CATCH_CONFIG_MAIN
 #include "src/libmeasurement_kit/ext/catch.hpp"
 
 #include "src/libmeasurement_kit/common/utils.hpp"
@@ -96,7 +95,7 @@ class FailingReporter : public BaseReporter {
 
 FailingReporter::~FailingReporter() {}
 
-TEST_CASE("The constructor works correctly") {
+TEST_CASE("Report constructor works correctly") {
     REQUIRE_NOTHROW(Report());
 }
 

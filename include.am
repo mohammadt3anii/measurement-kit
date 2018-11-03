@@ -366,22 +366,12 @@ test_ooni_main_SOURCES = test/ooni/bouncer.cpp                                 \
                          test/ooni/web_connectivity.cpp
 
 if BUILD_TESTS
-    ALL_TESTS += test/report/entry
+    ALL_TESTS += test/report/main
 endif
-test_report_entry_SOURCES = test/report/entry.cpp
-test_report_entry_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/report/file_reporter
-endif
-test_report_file_reporter_SOURCES = test/report/file_reporter.cpp
-test_report_file_reporter_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/report/report
-endif
-test_report_report_SOURCES = test/report/report.cpp
-test_report_report_LDADD = libmeasurement_kit.la
+test_report_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_report_main_SOURCES = test/report/entry.cpp                               \
+                           test/report/file_reporter.cpp                       \
+                           test/report/report.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/traceroute/android
