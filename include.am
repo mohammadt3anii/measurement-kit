@@ -308,64 +308,19 @@ test_ndt_main_SOURCES = test/ndt/measure_speed.cpp                             \
                         test/ndt/test_s2c.cpp
 
 if BUILD_TESTS
-    ALL_TESTS += test/net/buffer
+    ALL_TESTS += test/net/main
 endif
-test_net_buffer_SOURCES = test/net/buffer.cpp
-test_net_buffer_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/builtin_ca_bundle
-endif
-test_net_builtin_ca_bundle_SOURCES = test/net/builtin_ca_bundle.cpp
-test_net_builtin_ca_bundle_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/connect
-endif
-test_net_connect_SOURCES = test/net/connect.cpp
-test_net_connect_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/emitter
-endif
-test_net_emitter_SOURCES = test/net/emitter.cpp
-test_net_emitter_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/evbuffer
-endif
-test_net_evbuffer_SOURCES = test/net/evbuffer.cpp
-test_net_evbuffer_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/libevent_emitter
-endif
-test_net_libevent_emitter_SOURCES = test/net/libevent_emitter.cpp
-test_net_libevent_emitter_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/libssl
-endif
-test_net_libssl_SOURCES = test/net/libssl.cpp
-test_net_libssl_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/socks5
-endif
-test_net_socks5_SOURCES = test/net/socks5.cpp
-test_net_socks5_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/transport
-endif
-test_net_transport_SOURCES = test/net/transport.cpp
-test_net_transport_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/net/utils
-endif
-test_net_utils_SOURCES = test/net/utils.cpp
-test_net_utils_LDADD = libmeasurement_kit.la
+test_net_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_net_main_SOURCES = test/net/buffer.cpp                                    \
+                        test/net/builtin_ca_bundle.cpp                         \
+                        test/net/connect.cpp                                   \
+                        test/net/emitter.cpp                                   \
+                        test/net/evbuffer.cpp                                  \
+                        test/net/libevent_emitter.cpp                          \
+                        test/net/libssl.cpp                                    \
+                        test/net/socks5.cpp                                    \
+                        test/net/transport.cpp                                 \
+                        test/net/utils.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/nettest/ndt_example
