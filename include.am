@@ -355,40 +355,15 @@ test_nettests_main_SOURCES = test/nettests/captive_portal.cpp                  \
                              test/nettests/whatsapp.cpp
 
 if BUILD_TESTS
-    ALL_TESTS += test/ooni/bouncer
+    ALL_TESTS += test/ooni/main
 endif
-test_ooni_bouncer_SOURCES = test/ooni/bouncer.cpp
-test_ooni_bouncer_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ooni/collector_client
-endif
-test_ooni_collector_client_SOURCES = test/ooni/collector_client.cpp
-test_ooni_collector_client_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ooni/orchestrate
-endif
-test_ooni_orchestrate_SOURCES = test/ooni/orchestrate.cpp
-test_ooni_orchestrate_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ooni/templates
-endif
-test_ooni_templates_SOURCES = test/ooni/templates.cpp
-test_ooni_templates_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ooni/utils
-endif
-test_ooni_utils_SOURCES = test/ooni/utils.cpp
-test_ooni_utils_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/ooni/web_connectivity
-endif
-test_ooni_web_connectivity_SOURCES = test/ooni/web_connectivity.cpp
-test_ooni_web_connectivity_LDADD = libmeasurement_kit.la
+test_ooni_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_ooni_main_SOURCES = test/ooni/bouncer.cpp                                 \
+                         test/ooni/collector_client.cpp                        \
+                         test/ooni/orchestrate.cpp                             \
+                         test/ooni/templates.cpp                               \
+                         test/ooni/utils.cpp                                   \
+                         test/ooni/web_connectivity.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/report/entry
