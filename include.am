@@ -281,28 +281,13 @@ test_ffi_web_connectivity_example_SOURCES = test/ffi/web_connectivity_example.cp
 test_ffi_web_connectivity_example_LDADD = libmeasurement_kit.la
 
 if BUILD_TESTS
-    ALL_TESTS += test/http/headers
+    ALL_TESTS += test/http/main
 endif
-test_http_headers_SOURCES = test/http/headers.cpp
-test_http_headers_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/http/parse_url
-endif
-test_http_parse_url_SOURCES = test/http/parse_url.cpp
-test_http_parse_url_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/http/request
-endif
-test_http_request_SOURCES = test/http/request.cpp
-test_http_request_LDADD = libmeasurement_kit.la
-
-if BUILD_TESTS
-    ALL_TESTS += test/http/response_parser
-endif
-test_http_response_parser_SOURCES = test/http/response_parser.cpp
-test_http_response_parser_LDADD = libmeasurement_kit.la
+test_http_main_LDADD = libmeasurement_kit.la libtest_main.la
+test_http_main_SOURCES = test/http/headers.cpp                                 \
+                         test/http/parse_url.cpp                               \
+                         test/http/request.cpp                                 \
+                         test/http/response_parser.cpp
 
 if BUILD_TESTS
     ALL_TESTS += test/mlabns/mlabns
