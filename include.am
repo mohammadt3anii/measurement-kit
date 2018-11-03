@@ -272,7 +272,7 @@ if BUILD_TESTS
     ALL_TESTS += test/ffi/start
 endif
 test_ffi_start_SOURCES = test/ffi/start.cpp
-test_ffi_start_LDADD = libmeasurement_kit.la
+test_ffi_start_LDADD = libmeasurement_kit.la libtest_main.la
 
 if BUILD_TESTS
     ALL_TESTS += test/ffi/web_connectivity_example
